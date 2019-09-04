@@ -13,7 +13,7 @@ class EditCar extends Component{
 
         var carID = this.props.match.params.id;
         return new Promise(function(resolve,reject){
-            fetch("http://localhost:3001/api/car/"+carID,{
+            fetch("http://18.216.56.178:3001/api/car/"+carID,{
                 method: 'GET',
                 mode: "cors",
                 headers: {
@@ -35,7 +35,7 @@ class EditCar extends Component{
     }
     getMake = ()=>{
         return new Promise(function(resolve,reject){
-            fetch("http://localhost:3001/api/make")
+            fetch("http://18.216.56.178:3001/api/make")
                 .then(function(response){
                     return response.json();
                 }).then(function(jsonData) {
@@ -52,7 +52,7 @@ class EditCar extends Component{
     getModel = (manufacturer='')=>{
         return new Promise(function(resolve,reject){
             if(manufacturer==''){
-                fetch("http://localhost:3001/api/model")
+                fetch("http://18.216.56.178:3001/api/model")
                     .then(function(response){
                         return response.json();
                     }).then(function(jsonData) {
@@ -64,7 +64,7 @@ class EditCar extends Component{
                     reject(err);
                 });
             }else{
-                fetch("http://localhost:3001/api/model/"+manufacturer)
+                fetch("http://18.216.56.178:3001/api/model/"+manufacturer)
                     .then(function(response){
                         return response.json();
                     }).then(function(jsonData) {
@@ -82,7 +82,7 @@ class EditCar extends Component{
 
         var carID = this.props.match.params.id;
         return new Promise(function(resolve,reject){
-            fetch("http://localhost:3001/api/car/update/"+carID,{
+            fetch("http://18.216.56.178:3001/api/car/update/"+carID,{
                 method: 'POST',
                 mode: "cors",
                 headers: {

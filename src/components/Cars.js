@@ -23,7 +23,7 @@ class Cars extends Component{
 
     getCars() {
         return new Promise(function(resolve,reject){
-            fetch("http://localhost:3001/api/cars",{
+            fetch("http://18.216.56.178:3001/api/cars",{
                 method:"GET",
                 mode: "cors",
                 headers: {

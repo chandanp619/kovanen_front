@@ -18,12 +18,7 @@ class Header extends Component{
                     </div>
                     <div className="col-md-8">
                 <div className="social-links">
-                    <ul>
-                        <li><a href="https://facebook.com/myapp"><i className="fab fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/myapp"><i className="fab fa-twitter"></i></a></li>
-                        <li><a href="https://linkedin.com/myapp"><i className="fab fa-linkedin"></i></a></li>
-                        <li><a href="https://youtube.com/myapp"><i className="fab fa-youtube"></i></a></li>
-                    </ul>
+
                 </div>
                     </div>
                 </div>

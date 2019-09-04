@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class AddCar extends Component{
     constructor(props){
         super(props);
-        this.state = {"car":{"reg_number": "","make":"","model":"","year":"","power_window":"","auto":"","owner":"","status":""}};
+        this.state = {"car":{"reg_number": "","make":"","model":"","year":"","power_window":"","auto":"","chauffeur":"","status":""}};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.addCar = this.addCar.bind(this);
@@ -14,7 +14,7 @@ class AddCar extends Component{
 
     getMake = ()=>{
         return new Promise(function(resolve,reject){
-            fetch("http://localhost:3001/api/make")
+            fetch("http://18.216.56.178:3001/api/make")
                 .then(function(response){
                 return response.json();
             }).then(function(jsonData) {
@@ -31,7 +31,7 @@ class AddCar extends Component{
     getModel = (manufacturer='')=>{
         return new Promise(function(resolve,reject){
             if(manufacturer==''){
-            fetch("http://localhost:3001/api/model")
+            fetch("http://18.216.56.178:3001/api/model")
                 .then(function(response){
                     return response.json();
                 }).then(function(jsonData) {
@@ -43,7 +43,7 @@ class AddCar extends Component{
                 reject(err);
             });
             }else{
-                fetch("http://localhost:3001/api/model/"+manufacturer)
+                fetch("http://18.216.56.178:3001/api/model/"+manufacturer)
                     .then(function(response){
                         return response.json();
                     }).then(function(jsonData) {
@@ -60,7 +60,7 @@ class AddCar extends Component{
 
     addCar = (data) =>{
         return new Promise(function(resolve,reject){
-            fetch("http://localhost:3001/api/car/add",{
+            fetch("http://18.216.56.178:3001/api/car/add",{
                 method: 'POST',
                 mode: "cors",
                 headers: {
@@ -149,7 +149,7 @@ class AddCar extends Component{
                 <p><input type="text" name="year" onChange={this.handleChange} placeholder="Year" /></p>
                 <p><input type="text" name="power_window" onChange={this.handleChange} placeholder="Power Window" /></p>
                 <p><input type="text" name="auto" onChange={this.handleChange} placeholder="Auto" /></p>
-                <p><input type="text" name="owner" onChange={this.handleChange} placeholder="Owner" /></p>
+                <p><input type="text" name="chauffeur" onChange={this.handleChange} placeholder="Owner" /></p>
                 <p><select name="status" onChange={this.handleChange} placeholder="Status">
                     <option value="Free">Free</option>
                     <option value="Booked">Booked</option>

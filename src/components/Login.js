@@ -24,7 +24,7 @@ class Login extends Component{
     handleSubmit(event) {
         event.preventDefault();
         var Ndata = {email : this.state.email, password: this.state.password};
-        fetch('http://localhost:3001/api/login/', {
+        fetch('http://18.216.56.178:3001/api/login/', {
             method: 'POST',
             mode: "cors",
             headers: {
@@ -53,7 +53,7 @@ class Login extends Component{
 
 
 
-        // request.post('http://localhost:3001/api/login',data)
+        // request.post('http://18.216.56.178:3001/api/login',data)
         //     .on('response', function(response) {
         //         console.log(response);
         //     })
