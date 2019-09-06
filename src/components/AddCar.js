@@ -30,7 +30,7 @@ class AddCar extends Component{
 
     getModel = (manufacturer='')=>{
         return new Promise(function(resolve,reject){
-            if(manufacturer==''){
+            if(manufacturer===''){
             fetch("http://18.216.56.178:3001/api/model")
                 .then(function(response){
                     return response.json();
@@ -89,7 +89,7 @@ class AddCar extends Component{
         car[name] = value;
         this.setState({"car":car});
 
-        if(event.target.name == 'make'){
+        if(event.target.name === 'make'){
             this.getModel(event.target.value).then((response)=>{
                 this.setState ({"models": response});
             });
@@ -126,12 +126,16 @@ class AddCar extends Component{
             makeoptions = makeitems.map((item,i)=>{
                 if(item!=="")
                     return <option key={i} value={item}>{item}</option>;
+                else
+                    return "";
             });
         }
         if(typeof(modelitems)!== 'undefined' && modelitems.length > 0){
             modeloptions = modelitems.map((item,i)=>{
                 if(item!=="")
                     return <option key={i} value={item.model}>{item.model}</option>;
+                else
+                    return "";
             });
         }
 

@@ -3,7 +3,6 @@ import { Link} from "react-router-dom";
 // import { TablePagination } from 'react-pagination-table';
 import ReactTable from 'react-table'
 import "react-table/react-table.css";
-import Pagination from 'react-pagination-status';
 import Helper from '../Helper';
 class Bookings extends Component{
 

@@ -51,7 +51,7 @@ class EditCar extends Component{
 
     getModel = (manufacturer='')=>{
         return new Promise(function(resolve,reject){
-            if(manufacturer==''){
+            if(manufacturer===''){
                 fetch("http://18.216.56.178:3001/api/model")
                     .then(function(response){
                         return response.json();
@@ -110,7 +110,7 @@ class EditCar extends Component{
         var car = this.state.car;
         car[name] = value
         this.setState({"car":car});
-        if(event.target.name == 'make'){
+        if(event.target.name === 'make'){
             this.getModel(event.target.value).then((response)=>{
                 this.setState ({"models": response});
             });
@@ -126,7 +126,7 @@ class EditCar extends Component{
         this.updateCar(this.state.car)
             .then((data)=> {
                 console.log()
-                if(data.status == 'Car Updated'){
+                if(data.status === 'Car Updated'){
                     this.props.history.push("/cars");
                 }
             });
@@ -150,7 +150,7 @@ class EditCar extends Component{
     render(){
         let statusList = ["Free","Booked"];
             let statusOptions = statusList.map((item,i)=>{
-                if(this.state.car.status == item){
+                if(this.state.car.status === item){
                     return <option key={i} value={item} selected>{item}</option>;
                 }else{
                     return <option key={i} value={item}>{item}</option>;
