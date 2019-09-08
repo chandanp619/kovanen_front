@@ -67,7 +67,7 @@ class Cars extends Component{
             {Header:'Make',accessor:'make'},
             {Header:'Power Window',accessor:'power_window'},
             {Header:'Auto',accessor:'auto'},
-            {Header:'Owner',accessor:'owner'},
+            {Header:'Chauffeur',accessor:'chauffeur'},
             {Header:'Year',accessor:'year'},
             {id:'edit_{_id}',Header:'Edit',accessor:(d)=>{   return this.getEditLink(d._id)  }},
             {'id':'delete_{_id}',Header:'Delete',accessor:(d)=>{   return this.getDeleteLink(d._id)  }}
